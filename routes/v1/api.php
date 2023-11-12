@@ -35,5 +35,6 @@ Route::middleware(
         Route::get('students', [StudentController::class, 'listStudent']);
         Route::put('{student}', [StudentController::class, 'update']);
         Route::get('{student}', [StudentController::class, 'show']);
+        Route::delete('{student}', [StudentController::class, 'delete']);
     });
 });

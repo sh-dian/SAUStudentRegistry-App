@@ -57,12 +57,22 @@ class StudentController extends Controller
         // Get Validate Request
         $validated = $request->validated();
         $student = Student::find($student->id);
+        $validated['study_course_id'] = $validated['course']['id'];
         $student->update($validated);
 
-        return $this->return_api(true, Response::HTTP_ACCEPTED, null, new StudentResource($student), null,null);
+        return $this->return_api(true, Response::HTTP_ACCEPTED, 'Data Updated', new StudentResource($student), null,null);
     }
 
-    public function show()
+    public function show(Student $student)
     {
+        return $this->return_api(true, Response::HTTP_FOUND, 'Found', new StudentResource($student), null,null);
+    }
+
+    public function delete(Student $student)
+    {
+        $student = Student::find($student->id);
+        $student->delete();
+        return $this->return_api(true, Response::HTTP_ACCEPTED, 'This student has been Deleted', new StudentResource($student), null,null);
+
     }
 }
