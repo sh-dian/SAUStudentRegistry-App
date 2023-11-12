@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\v1\AuthController;
+use App\Http\Controllers\api\v1\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,12 @@ Route::middleware(
 )->group(function () {
     // Logout
     Route::get('logout', [AuthController::class, 'logout']);
+
+    Route::prefix('students')->group(function () {
+        Route::post('import', [StudentController::class, 'importExcel']);
+        Route::post('students', [StudentController::class, 'store']);
+        Route::get('students', [StudentController::class, 'listStudent']);
+        Route::put('{student}', [StudentController::class, 'update']);
+        Route::get('{student}', [StudentController::class, 'show']);
+    });
 });
