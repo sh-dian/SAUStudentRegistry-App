@@ -9,12 +9,10 @@
 
 ## About System
 
-resourceful APIs for the student registry app of South of Australia University
+A technical assessment for VIMIGO interview. This system contain only resourceful APIs for the student registry app of South of Australia University
 
 ## Related Link
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Below is related link for this project:
+    1. OneDrive (contain excel for API Checklist and Postman JSON File) : https://umpedumy-my.sharepoint.com/:f:/g/personal/cb20050_student_umpsa_edu_my/EgpjJxher_dChceam_avAZwB0uyuUWyjY_CJPw3WOCI-IA?e=ohUOZe
+    2. Postman Link: https://galactic-spaceship-133685.postman.co/workspace/SAUStudentRegistryApp~cbb375f3-a4f3-4c8c-964e-8b654432e991/collection/22922760-ae677cd4-1e53-4a81-8579-0537ba4ef1f6?action=share&creator=22922760&active-environment=22922760-72219a11-f38e-41bb-98de-0198ecabde68
