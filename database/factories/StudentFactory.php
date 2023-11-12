@@ -18,7 +18,7 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            'study_course_id' => StudyCourse::inRandomOrder()->pluck('id')->first(),
+            'course' => $this->faker->text(25),
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'address' => $this->faker->text(25),

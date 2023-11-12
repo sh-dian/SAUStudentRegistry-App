@@ -26,7 +26,7 @@ class StudentStoreRequest extends FormRequest
             'name' => 'required|string',
             'email' => ['required', 'string', 'email', 'max:255', 'unique:students,email'],
             'address' => 'required|string',
-            'course.id' => 'required|string',
+            'course' => 'required|string',
         ];
     }
 }
