@@ -42,6 +42,7 @@ class StudentsImport implements OnEachRow, WithUpserts,WithHeadingRow
                 'email'    => $row['email'],
                 'address'    => $row['address'],
                 'course'    => $row['course'],
+                'created_at' => now(),
             ]
         );
     }
