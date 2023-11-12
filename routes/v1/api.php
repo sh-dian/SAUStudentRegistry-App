@@ -29,6 +29,7 @@ Route::middleware(
     // Logout
     Route::get('logout', [AuthController::class, 'logout']);
 
+    //Student Model
     Route::prefix('students')->group(function () {
         Route::post('import', [StudentController::class, 'importExcel']);
         Route::post('students', [StudentController::class, 'store']);
