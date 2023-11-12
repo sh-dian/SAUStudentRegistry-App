@@ -3,10 +3,12 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Enums\RegistrationStatusEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -23,6 +25,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'registration_status',
     ];
 
     /**
@@ -43,6 +46,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        // Enum
+        'registration_status' => RegistrationStatusEnum::class,
     ];
 
     public function isSuperAdmin(): bool
@@ -58,5 +63,10 @@ class User extends Authenticatable
     public function universityStaff()
     {
         return $this->hasOne(UniversityStaff::class);
+    }
+
+    public function getRegistrationStatusLabelAttribute()
+    {
+        return RegistrationStatusEnum::from($this->attributes['registration_status'])->label;
     }
 }
